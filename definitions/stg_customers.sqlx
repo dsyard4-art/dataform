@@ -1,0 +1,14 @@
+config {
+    type: "table",
+    description: "Cleaned customer data"
+}
+
+SELECT
+  customer_id,
+  TRIM(LOWER(full_name)) AS full_name,
+  email,
+  signup_date
+FROM
+ gen-lang-client-0613855698.raw.customers
+WHERE
+  email IS NOT NULL

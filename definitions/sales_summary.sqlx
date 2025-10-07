@@ -1,0 +1,16 @@
+config {
+  type: "table",
+  description: "Total sales per customer per month",
+  tags: ["analytics", "sales"]
+}
+
+select
+  c.customer_id,
+  c.full_name,
+  format_date('%Y-%m', o.order_date) as order_month,
+  sum(o.total_amount) as total_sales,
+  count(distinct o.order_id) as total_orders
+from ${ref("stg_customers")} c
+join ${ref("stg_orders")} o on c.customer_id = o.customer_id
+group by 1, 2, 3
+

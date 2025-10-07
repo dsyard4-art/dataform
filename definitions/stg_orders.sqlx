@@ -1,0 +1,14 @@
+config {
+    type: "table",
+    description: "Filtered completed orders"
+}
+
+SELECT
+  order_id,
+  customer_id,
+  order_date,
+  total_amount
+FROM
+  gen-lang-client-0613855698.raw.orders
+WHERE
+  status = 'COMPLETED'
