@@ -2,3 +2,5 @@ defaultProject: gen-lang-client-0613855698
 defaultDataset: dataform
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.26
+defaultDatabase: gen-lang-client-0613855698
+defaultSchema: analytics
